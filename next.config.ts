@@ -11,10 +11,10 @@ const nextConfig: NextConfig = {
         has: [
           {
             type: "host",
-            value: "rajeshtiwari.in",
+            value: "rajeshtiwari.com",
           },
         ],
-        destination: "https://www.rajeshtiwari.in/:path*",
+        destination: "https://www.rajeshtiwari.com/:path*",
         permanent: true,
       },
     ];

@@ -2,7 +2,7 @@
 
 Modern portfolio website for Rajesh Tiwari, a senior software engineer focused on frontend engineering, cross-platform mobile apps, and scalable systems.
 
-Live site: [rajeshtiwari.in](https://rajeshtiwari.in/)
+Live site: [rajeshtiwari.com](https://rajeshtiwari.com/)
 
 ## Overview
 
@@ -104,10 +104,10 @@ Create a `.env.local` file in the project root:
 
 ```env
 RESEND_API_KEY=your_resend_api_key
-NEXT_PUBLIC_SITE_URL=https://rajeshtiwari.in
+NEXT_PUBLIC_SITE_URL=https://rajeshtiwari.com
 ```
 
-`RESEND_API_KEY` is required for the contact form server action. `NEXT_PUBLIC_SITE_URL` is used by the root metadata base and defaults to `https://rajeshtiwari.in` when not provided.
+`RESEND_API_KEY` is required for the contact form server action. `NEXT_PUBLIC_SITE_URL` is used by the root metadata base and defaults to `https://rajeshtiwari.com` when not provided.
 
 ### Development
 
