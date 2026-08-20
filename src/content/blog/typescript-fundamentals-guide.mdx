@@ -1,0 +1,108 @@
+---
+title: "TypeScript Fundamentals: Building Type-Safe Interfaces"
+description: "A solid guide compiling the core fundamentals of TypeScript—from type inference and interfaces to generics and utilities—tailored for React and React Native developers."
+date: "2026-07-15"
+published: true
+tags: ["typescript", "javascript", "react", "programming"]
+cover: "/images/blogs/typescript-fundamentals-guide.jpg"
+---
+
+## Just published a comprehensive walkthrough on TypeScript Fundamentals!
+
+When moving from JavaScript to TypeScript, it's easy to get overwhelmed by the compiler options, complex syntax, and advanced structures. To make this transition smooth, I've compiled the core concepts of TypeScript in one place with a clean, approachable, and easy-to-understand structure.
+
+This guide is designed for:
+* **JavaScript developers** looking to build type-safe apps.
+* **React / React Native engineers** who want smoother component integrations.
+* **Anyone** preparing for technical frontend interview rounds.
+
+---
+
+### 1. Types & Type Inference
+
+In TypeScript, you don't always have to write types explicitly. The compiler is smart enough to deduce types based on values (this is called **Type Inference**).
+
+```typescript
+let username = "Rajesh Tiwari"; // Inferred as string
+let age = 30; // Inferred as number
+```
+
+---
+
+### 2. Interfaces vs. Type Aliases
+
+A frequent interview question: **When should you use `interface` and when should you use `type`?**
+
+* Use **Interfaces** when defining the structure of objects, especially when extending or merging them later:
+  ```typescript
+  interface User {
+    name: string;
+    role: string;
+  }
+  interface Developer extends User {
+    primaryStack: string[];
+  }
+  ```
+* Use **Type Aliases** for unions, tuples, or primitive aliases:
+  ```typescript
+  type Status = "idle" | "loading" | "success" | "error";
+  type Point = [number, number];
+  ```
+
+---
+
+### 3. Functions & Generics
+
+Generics are like arguments for your types. They enable you to write reusable, modular code that adapts to different data types while retaining absolute type safety.
+
+```typescript
+// A reusable API response wrapper
+interface ApiResponse<T> {
+  data: T;
+  status: number;
+  message: string;
+}
+
+const userResponse: ApiResponse<{ name: string }> = {
+  data: { name: "Rajesh" },
+  status: 200,
+  message: "Success"
+};
+```
+
+---
+
+### 4. Utility Types
+
+TypeScript comes with powerful built-in utilities to transform types on the fly:
+
+* `Partial<T>`: Makes all properties in `T` optional.
+* `Pick<T, K>`: Extracts a subset of properties `K` from `T`.
+* `Readonly<T>`: Makes all properties in `T` immutable.
+
+```typescript
+interface Todo {
+  title: string;
+  description: string;
+  completed: boolean;
+}
+
+// Only updating partial properties
+const updateTodo = (todo: Todo, fieldsToUpdate: Partial<Todo>) => {
+  return { ...todo, ...fieldsToUpdate };
+};
+```
+
+---
+
+### Summary Checklist for React Developers
+
+1. Always type component **Props** using `interface` or `type`.
+2. Leverage **Generics** for API request fetching helpers.
+3. Keep strict null checks enabled to eliminate the dreaded `Cannot read properties of undefined` in production.
+
+If you find this useful, feel free to share it with your development network!
+
+*Original LinkedIn post link: [https://lnkd.in/p/d_377wXu](https://lnkd.in/p/d_377wXu)*
+
+#TypeScript #JavaScript #FrontendDevelopment #React #Learning
