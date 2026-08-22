@@ -206,7 +206,7 @@ export default function Skills() {
             if (!tile) {
               return (
                 <div
-                  key="empty"
+                  key={`empty-${index}`}
                   className="h-16 rounded-lg border border-dashed border-border bg-[var(--surface-muted)] sm:h-20"
                 />
               );
