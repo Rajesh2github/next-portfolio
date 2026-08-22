@@ -254,7 +254,7 @@ body {
 }
 
 /* ── Light mode override (soft blue-tinted light) ───────────────────── */
-.light {
+:root:not(.dark) {
   --background: oklch(0.97 0.005 160);
   --foreground: oklch(0.15 0.014 160);
 
