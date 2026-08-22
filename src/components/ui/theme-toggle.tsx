@@ -9,6 +9,7 @@ export default function ThemeToggle() {
 
     root.classList.toggle("dark", nextDarkMode);
     root.style.colorScheme = nextDarkMode ? "dark" : "light";
+    localStorage.setItem("theme", nextDarkMode ? "dark" : "light");
   };
 
   return (
