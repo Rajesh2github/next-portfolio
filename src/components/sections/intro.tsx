@@ -91,7 +91,7 @@ export default function Intro() {
 
           <p className="mt-6 w-full max-w-none text-base leading-relaxed text-muted-foreground sm:text-lg lg:text-[1.08rem]">
             <span className="font-semibold text-foreground">Hey, I&apos;m a Senior Software Engineer</span> with over{" "}
-            <span className="font-semibold text-foreground">10+ years of experience</span> in Frontend (React, React Native, Redux, JavaScript, TypeScript) development.
+            <span className="font-semibold text-foreground">10+ years of experience</span> in Frontend (React, React Native, NextJS, Redux, JavaScript, TypeScript) development.
             <br />
             <span className="block h-2" aria-hidden />
             I have proven expertise in building and optimizing high-performance web and mobile applications, primarily in{" "}
