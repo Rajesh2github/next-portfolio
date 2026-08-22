@@ -17,14 +17,12 @@ body {
   display: none;
 }
 
-/* ── Light canvas now mirrors the dark bluish aesthetic ── */
+/* ── Light canvas with a soft-mint light aesthetic ── */
 .light-canvas {
   background:
-    radial-gradient(circle at 24% 18%, rgba(16, 185, 129, 0.14) 0%, transparent 20%),
-    radial-gradient(circle at 52% 14%, rgba(17, 24, 39, 0.22) 0%, transparent 24%),
-    radial-gradient(circle at 80% 20%, rgba(15, 23, 42, 0.18) 0%, transparent 18%),
-    radial-gradient(circle at 50% 42%, rgba(8, 15, 28, 0.16) 0%, transparent 24%),
-    linear-gradient(180deg, #020605 0%, #030806 52%, #010403 100%);
+    radial-gradient(circle at 24% 18%, rgba(52, 211, 153, 0.12) 0%, transparent 35%),
+    radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 25%),
+    linear-gradient(180deg, #f0fdf4 0%, #f4f8f5 52%, #eaf0ed 100%);
 }
 
 .light-canvas::after {
@@ -32,8 +30,8 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at center, rgba(52, 211, 153, 0.025) 0%, transparent 44%),
-    linear-gradient(180deg, rgba(52, 211, 153, 0.018), rgba(255, 255, 255, 0) 44%, rgba(0, 0, 0, 0.16));
+    radial-gradient(circle at center, rgba(52, 211, 153, 0.04) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(52, 211, 153, 0.02), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.03));
   pointer-events: none;
 }
 
