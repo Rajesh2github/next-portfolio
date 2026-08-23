@@ -101,7 +101,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="dark"
+      className="dark overflow-x-hidden"
       style={{ colorScheme: "dark" }}
       suppressHydrationWarning
     >
@@ -130,15 +130,15 @@ export default function RootLayout({
         className={`${manrope.className} ${manrope.variable} ${sora.variable} relative flex min-h-screen min-h-dvh flex-col overflow-x-hidden bg-background text-foreground transition-colors duration-300`}
         suppressHydrationWarning
       >
-        <div className="light-canvas light-only absolute inset-0 -z-20" />
-        <div className="dark-canvas absolute inset-0 -z-20 hidden dark:block" />
+        <div className="light-canvas pointer-events-none absolute inset-0 -z-20 opacity-100 transition-opacity duration-500 dark:opacity-0" />
+        <div className="dark-canvas pointer-events-none absolute inset-0 -z-20 opacity-0 transition-opacity duration-500 dark:opacity-100" />
         {/* <div className="pointer-events-none absolute inset-0 -z-10 hidden dark:block">
           <GalaxyDeferred />
         </div> */}
         {/* BACKGROUND BLOBS */}
-        <div className="light-only absolute top-[-7rem] right-[8rem] -z-10 h-[34rem] w-[34rem] rounded-full bg-[var(--project-glow-primary)] blur-[9rem] sm:w-[72rem]"></div>
-        <div className="light-only absolute top-[-2rem] left-[-32rem] -z-10 h-[32rem] w-[54rem] rounded-full bg-secondary/70 blur-[9rem] sm:w-[72rem] md:left-[-30rem] lg:left-[-24rem] xl:left-[-12rem] 2xl:left-[-4rem]"></div>
-        <div className="light-only absolute left-[22%] top-[5rem] -z-10 h-[30rem] w-[46rem] rounded-full bg-accent/60 opacity-85 blur-[11rem]" />
+        <div className="pointer-events-none absolute top-[-7rem] right-[8rem] -z-10 hidden h-[34rem] w-[34rem] rounded-full bg-[var(--project-glow-primary)] opacity-100 blur-[9rem] transition-opacity duration-500 dark:opacity-0 sm:block sm:w-[72rem]"></div>
+        <div className="pointer-events-none absolute top-[-2rem] left-[-32rem] -z-10 hidden h-[32rem] w-[54rem] rounded-full bg-secondary/70 opacity-70 blur-[9rem] transition-opacity duration-500 dark:opacity-0 sm:block sm:w-[72rem] md:left-[-30rem] lg:left-[-24rem] xl:left-[-12rem] 2xl:left-[-4rem]"></div>
+        <div className="pointer-events-none absolute left-[22%] top-[5rem] -z-10 hidden h-[30rem] w-[46rem] rounded-full bg-accent/60 opacity-85 blur-[11rem] transition-opacity duration-500 dark:opacity-0 sm:block" />
 
         <MotionProvider>
           <LenisProvider>

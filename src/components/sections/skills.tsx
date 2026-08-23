@@ -58,14 +58,13 @@ function buildInitialTiles(nextCols: number) {
 
 export default function Skills() {
 
-  const getColsForViewport = () =>
-    typeof window !== "undefined" && window.visualViewport
-      ? window.visualViewport.width < 650
-        ? 4
-        : 6
-      : typeof window !== "undefined" && window.innerWidth < 650
-        ? 4
-        : 6;
+  const getColsForViewport = () => {
+    if (typeof window === "undefined") return 6;
+    const width = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+    if (width < 420) return 3;
+    if (width < 650) return 4;
+    return 6;
+  };
 
   const [cols, setCols] = useState(6);
   const rows = Math.floor(24 / cols);

@@ -22,7 +22,7 @@ export default function Header() {
           >
             <div className="absolute inset-0 rounded-full border border-border bg-[var(--surface-glass)] shadow-[var(--shadow-soft)] backdrop-blur-md" />
 
-            <nav className="relative flex items-center gap-2 px-1.5 py-1.5 sm:gap-4 sm:px-3.5 sm:py-2.5">
+            <nav className="relative flex items-center gap-2 pl-3.5 pr-2 py-1.5 sm:gap-4 sm:pl-4 sm:pr-3.5 sm:py-2.5">
               <ul className="flex items-center justify-center gap-0.5 whitespace-nowrap text-[10px] font-medium sm:gap-3 sm:text-[12px]">
                 {links.map((link) => (
                   <m.li
@@ -44,7 +44,7 @@ export default function Header() {
                 ))}
               </ul>
               {/* Re-enable these when you want light mode back */}
-              <span className="h-7 w-px bg-black/10 dark:bg-white/10" />
+              <span className="h-5 w-px bg-black/10 dark:bg-white/10 sm:h-6" />
               <ThemeToggle />
             </nav>
           </m.div>

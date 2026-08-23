@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="flex w-full flex-col lg:flex-row">
       {/* LEFT SIDEBAR */}
-      <aside className="w-full lg:w-[10rem] lg:flex-none lg:pl-0 lg:sticky lg:top-24 lg:flex lg:min-h-[calc(100vh-16rem)] lg:items-center lg:self-start">
+      <aside className="hidden lg:flex lg:w-[10rem] lg:flex-none lg:pl-0 lg:sticky lg:top-24 lg:min-h-[calc(100vh-16rem)] lg:items-center lg:self-start">
         <Sidebar />
       </aside>
 

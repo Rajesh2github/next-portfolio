@@ -297,14 +297,14 @@ export default function Project() {
         </m.div>
 
         {/* ── grid ── */}
-        <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-[minmax(0,436px)_1fr] lg:items-stretch">
+        <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-[minmax(0,480px)_1fr] lg:items-stretch">
 
           {/* ── info card ── */}
           <m.div
             {...fadeUp(0.1)}
             onMouseEnter={() => setIsAutoPaused(true)}
             onMouseLeave={() => setIsAutoPaused(false)}
-            className="order-2 group relative flex flex-col gap-3 overflow-hidden rounded-2xl border border-border bg-[var(--surface-glass-strong)] px-4 py-4 text-card-foreground shadow-[var(--shadow-card)] lg:order-1 lg:h-[386px] lg:w-[436px]"
+            className="order-2 group relative flex flex-col gap-3 overflow-hidden rounded-2xl border border-border bg-[var(--surface-glass-strong)] px-4 py-4 text-card-foreground shadow-[var(--shadow-card)] lg:order-1 lg:min-h-[460px] lg:w-[480px]"
           >
             {/* corner glow */}
             <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[var(--surface-accent-soft)] blur-2xl transition-all duration-700 group-hover:bg-[var(--surface-accent-strong)]" />
@@ -426,7 +426,7 @@ export default function Project() {
           {/* ── canvas card ── */}
           <m.div
             {...fadeUp(0.18)}
-            className="order-1 relative overflow-hidden rounded-lg border border-border bg-[var(--surface-glass-strong)] shadow-[var(--shadow-card)] sm:rounded-2xl lg:order-2 lg:h-[386px]"
+            className="order-1 relative overflow-hidden rounded-lg border border-border bg-[var(--surface-glass-strong)] shadow-[var(--shadow-card)] sm:rounded-2xl lg:order-2 h-[300px] sm:h-[350px] lg:h-auto lg:min-h-[460px]"
           >
             {/* grid overlay */}
             <div
