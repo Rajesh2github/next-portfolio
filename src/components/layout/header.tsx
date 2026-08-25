@@ -11,11 +11,11 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed inset-x-0 top-4 z-50">
+    <header className="fixed inset-x-0 top-4 z-50 pointer-events-none">
       <div className="mx-auto w-full max-w-[940px] px-4 sm:px-6">
         <div className="flex justify-center">
           <m.div
-            className="relative w-fit max-w-full"
+            className="relative w-fit max-w-full pointer-events-auto"
             initial={{ y: -60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.35, ease: "easeOut" }}
