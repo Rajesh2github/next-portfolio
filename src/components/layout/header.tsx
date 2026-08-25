@@ -24,24 +24,31 @@ export default function Header() {
 
             <nav className="relative flex items-center gap-2 pl-3.5 pr-2 py-1.5 sm:gap-4 sm:pl-4 sm:pr-3.5 sm:py-2.5">
               <ul className="flex items-center justify-center gap-0.5 whitespace-nowrap text-[10px] font-medium sm:gap-3 sm:text-[12px]">
-                {links.map((link) => (
-                  <m.li
-                    key={link.href}
-                    initial={{ y: -40, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                  >
-                    <Link
-                      href={link.href}
-                      className={`block rounded-full px-2 py-1.5 leading-none transition sm:px-3 ${
-                        pathname === link.href
-                          ? "bg-accent text-foreground shadow-sm"
-                          : "text-muted-foreground hover:bg-secondary hover:text-foreground"
-                      }`}
+                {links.map((link) => {
+                  const isActive =
+                    link.href === "/"
+                      ? pathname === "/"
+                      : pathname === link.href || pathname.startsWith(link.href + "/");
+
+                  return (
+                    <m.li
+                      key={link.href}
+                      initial={{ y: -40, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
                     >
-                      {link.name}
-                    </Link>
-                  </m.li>
-                ))}
+                      <Link
+                        href={link.href}
+                        className={`block rounded-full px-2 py-1.5 leading-none transition sm:px-3 ${
+                          isActive
+                            ? "bg-accent text-foreground shadow-sm"
+                            : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                        }`}
+                      >
+                        {link.name}
+                      </Link>
+                    </m.li>
+                  );
+                })}
               </ul>
               {/* Re-enable these when you want light mode back */}
               <span className="h-5 w-px bg-black/10 dark:bg-white/10 sm:h-6" />
