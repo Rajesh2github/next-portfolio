@@ -10,6 +10,8 @@ import ThemeToggle from "../ui/theme-toggle";
 export default function Header() {
   const pathname = usePathname();
 
+  if (pathname.startsWith("/learn")) return null;
+
   return (
     <header className="fixed inset-x-0 top-4 z-50 pointer-events-none">
       <div className="mx-auto w-full max-w-[940px] px-4 sm:px-6">

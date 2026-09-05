@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ClerkProvider } from "@clerk/nextjs";
 import { Manrope, Sora } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -7,6 +8,7 @@ import "./globals.css";
 import "@/styles/mdx.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import MainContainer from "@/components/layout/main-container";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import { Toaster } from "react-hot-toast";
 import LenisProvider from "@/components/providers/lenis-provider";
@@ -15,7 +17,7 @@ import { MotionProvider } from "@/components/ui/reveal";
 
 const siteUrl = "https://www.rajesh2github.in";
 const siteName = "Rajesh Tiwari";
-const siteTitle = "Rajesh Tiwari | Full-Stack Developer";
+const siteTitle = "Rajesh Tiwari | Senior Frontend Engineer";
 const siteDescription =
   "Building scalable web applications, API-driven systems, Chrome extensions, and modern digital experiences using Next.js, React, TypeScript, and backend technologies.";
 const ogImageUrl = `${siteUrl}/OG_image.png?v=2`;
@@ -130,31 +132,28 @@ export default function RootLayout({
         className={`${manrope.className} ${manrope.variable} ${sora.variable} relative flex min-h-screen min-h-dvh flex-col overflow-x-hidden bg-background text-foreground transition-colors duration-300`}
         suppressHydrationWarning
       >
-        <div className="light-canvas pointer-events-none absolute inset-0 -z-20 opacity-100 transition-opacity duration-500 dark:opacity-0" />
-        <div className="dark-canvas pointer-events-none absolute inset-0 -z-20 opacity-0 transition-opacity duration-500 dark:opacity-100" />
-        {/* <div className="pointer-events-none absolute inset-0 -z-10 hidden dark:block">
-          <GalaxyDeferred />
-        </div> */}
-        {/* BACKGROUND BLOBS */}
-        <div className="pointer-events-none absolute top-[-7rem] right-[8rem] -z-10 hidden h-[34rem] w-[34rem] rounded-full bg-[var(--project-glow-primary)] opacity-100 blur-[9rem] transition-opacity duration-500 dark:opacity-0 sm:block sm:w-[72rem]"></div>
-        <div className="pointer-events-none absolute top-[-2rem] left-[-32rem] -z-10 hidden h-[32rem] w-[54rem] rounded-full bg-secondary/70 opacity-70 blur-[9rem] transition-opacity duration-500 dark:opacity-0 sm:block sm:w-[72rem] md:left-[-30rem] lg:left-[-24rem] xl:left-[-12rem] 2xl:left-[-4rem]"></div>
-        <div className="pointer-events-none absolute left-[22%] top-[5rem] -z-10 hidden h-[30rem] w-[46rem] rounded-full bg-accent/60 opacity-85 blur-[11rem] transition-opacity duration-500 dark:opacity-0 sm:block" />
+        <ClerkProvider afterSignOutUrl="/learn">
+          <div className="light-canvas pointer-events-none absolute inset-0 -z-20 opacity-100 transition-opacity duration-500 dark:opacity-0" />
+          <div className="dark-canvas pointer-events-none absolute inset-0 -z-20 opacity-0 transition-opacity duration-500 dark:opacity-100" />
+          {/* BACKGROUND BLOBS */}
+          <div className="pointer-events-none absolute top-[-7rem] right-[8rem] -z-10 hidden h-[34rem] w-[34rem] rounded-full bg-[var(--project-glow-primary)] opacity-100 blur-[9rem] transition-opacity duration-500 dark:opacity-0 sm:block sm:w-[72rem]"></div>
+          <div className="pointer-events-none absolute top-[-2rem] left-[-32rem] -z-10 hidden h-[32rem] w-[54rem] rounded-full bg-secondary/70 opacity-70 blur-[9rem] transition-opacity duration-500 dark:opacity-0 sm:block sm:w-[72rem] md:left-[-30rem] lg:left-[-24rem] xl:left-[-12rem] 2xl:left-[-4rem]"></div>
+          <div className="pointer-events-none absolute left-[22%] top-[5rem] -z-10 hidden h-[30rem] w-[46rem] rounded-full bg-accent/60 opacity-85 blur-[11rem] transition-opacity duration-500 dark:opacity-0 sm:block" />
 
-        <MotionProvider>
-          <LenisProvider>
-            <ActiveSectionContextProvider>
-              <Header />
-              {/* CONTENT */}
-              <main className="w-full flex-1 pt-32 pb-24 sm:pb-10">
-                <div className="w-full">{children}</div>
-              </main>
-              <Footer />
-              <Toaster position="top-right" />
-              <Analytics />
-              <SpeedInsights />
-            </ActiveSectionContextProvider>
-          </LenisProvider>
-        </MotionProvider>
+          <MotionProvider>
+            <LenisProvider>
+              <ActiveSectionContextProvider>
+                <Header />
+                {/* CONTENT */}
+                <MainContainer>{children}</MainContainer>
+                <Footer />
+                <Toaster position="top-right" />
+                <Analytics />
+                <SpeedInsights />
+              </ActiveSectionContextProvider>
+            </LenisProvider>
+          </MotionProvider>
+        </ClerkProvider>
       </body>
     </html>
   );

@@ -52,6 +52,7 @@ export const links = [
   { name: "Blog", href: "/blog" },
   { name: "Play", href: "/play" },
   { name: "AI", href: "/ai" },
+  { name: "Learn", href: "/learn" },
 ] as const;
 
 export const sections = [

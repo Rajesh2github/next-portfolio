@@ -116,7 +116,7 @@ export default function ContactFormEmail({
                     letterSpacing: "-0.01em",
                   }}
                 >
-                  You've got a new <br />
+                  You&apos;ve got a new <br />
                   <span style={{ color: "#7c3aed", fontStyle: "italic" }}>
                     message waiting.
                   </span>
@@ -132,7 +132,7 @@ export default function ContactFormEmail({
                   }}
                 >
                   Someone reached out through your portfolio contact form.
-                  Here's what they had to say.
+                  Here&apos;s what they had to say.
                 </Text>
               </Section>
 

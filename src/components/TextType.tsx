@@ -173,6 +173,7 @@ const TextType = ({
 
   return createElement(
     Component,
+    // eslint-disable-next-line react-hooks/refs
     {
       ref: containerRef,
       className: `text-type ${className}`,

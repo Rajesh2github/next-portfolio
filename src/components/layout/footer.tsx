@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FaGithub } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiTypescript, SiResend } from "react-icons/si";
@@ -28,6 +31,10 @@ const techStack = [
 ] as const;
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  if (pathname.startsWith("/learn")) return null;
+
   return (
     <footer className="px-4 pb-[max(5rem,env(safe-area-inset-bottom))] pt-2 text-center sm:pb-6">
       <div className="mx-auto max-w-lg border-t border-border pt-5">
@@ -50,15 +57,24 @@ export default function Footer() {
             );
           })}
         </div>
-        <Link
-          href="https://github.com/Rajesh2github/next-portfolio"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 inline-flex items-center gap-2 text-[11px] text-muted-foreground transition hover:text-foreground"
-        >
-          <FaGithub className="text-sm opacity-45" />
-          <span>View repository</span>
-        </Link>
+        <div className="mt-4 flex items-center justify-center gap-3 text-[11px] text-muted-foreground">
+          <Link
+            href="/learn"
+            className="font-medium text-blue-600 hover:text-blue-500 hover:underline transition"
+          >
+            Developer Learning Portal
+          </Link>
+          <span className="opacity-40">•</span>
+          <Link
+            href="https://github.com/Rajesh2github/next-portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 transition hover:text-foreground"
+          >
+            <FaGithub className="text-sm opacity-45" />
+            <span>View repository</span>
+          </Link>
+        </div>
       </div>
     </footer>
   );
