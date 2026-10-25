@@ -116,21 +116,38 @@ export const experiencesData = [
 
 export const myProjects = [
   {
-    title: "OmniBooking — High-Performance OTA Platform",
+    title: "JS Lab — Advanced Online JS Editor & Debugger",
     points: [
-      "Architected and led the development of a unified high-throughput booking platform across Web (React) and Mobile (React Native) serving millions of active users monthly.",
-      "Designed and implemented a dynamic theme engine and design-token compilation pipeline driven by remote configuration, enabling instant visual rebranding without app store releases.",
-      "Engineered a native, high-performance React Native one-page checkout flow replacing legacy, sluggish WebView layers, boosting successful transaction completions by 25%.",
+      "Engineered an interactive web-based JavaScript workspace featuring live code execution, console output, and performance profiling.",
+      "Integrated Gemini AI for automated, real-time code reviews, providing instant suggestions for performance improvements, edge cases, and best practices.",
+      "Designed an intuitive debugging suite to inspect variable states, execution duration, and asynchronous behavior with zero overhead.",
     ],
-    href: "https://www.linkedin.com/in/rajesh-tiwari-reactjs-javascript/",
+    href: "https://jslab.rajeshtiwari.com/",
     repoHref: "https://github.com/Rajesh2github",
     featured: true,
     tags: [
-      { id: 1, name: "React", icon: FaReact },
-      { id: 2, name: "React Native", icon: FaReact },
-      { id: 3, name: "Redux Toolkit", icon: SiRedux },
-      { id: 4, name: "TypeScript", icon: SiTypescript },
-      { id: 5, name: "REST APIs", icon: TbApi },
+      { id: 1, name: "Next.js", icon: SiNextdotjs },
+      { id: 2, name: "React", icon: FaReact },
+      { id: 3, name: "AI Review", icon: SiGooglegemini },
+      { id: 4, name: "JavaScript", icon: SiJavascript },
+      { id: 5, name: "TypeScript", icon: SiTypescript },
+    ],
+  },
+  {
+    title: "Scratch and Learn — Interactive Educational Game",
+    points: [
+      "Built a mobile educational game for kids that blends creative scratch-card mechanics with foundational learning puzzles to keep children engaged.",
+      "Engineered touch-responsive canvas animations and sound-rich interactive feedback optimized for high FPS and low battery consumption on Android devices.",
+      "Successfully launched on the Google Play Store with strict child privacy compliance, offline functionality, and intuitive zero-friction navigation.",
+    ],
+    href: "https://play.google.com/store/apps/details?id=com.rajeshtiwari.scratchandlearn",
+    repoHref: "https://github.com/Rajesh2github",
+    featured: true,
+    tags: [
+      { id: 1, name: "React Native", icon: FaReact },
+      { id: 2, name: "Mobile", icon: FaReact },
+      { id: 3, name: "JavaScript", icon: SiJavascript },
+      { id: 4, name: "Gamification", icon: TbBinaryTree },
     ],
   },
   {
